@@ -6,8 +6,8 @@ cat /etc/os-release | grep -e "^NAME" -e "^VERSION"
 echo -e "\n=== UPTIME ==="
 uptime -p
 
-echo -e "\n=== PROMEDIO DE CARGA ==="
-uptime | awk -F'load avarage:' '{ print $2 }'
+echo -e "\n=== PROMEDIO DE CARGA (LOAD AVERAGE) ==="
+uptime | awk -F'load average:' '{ print $2 }'
 
 echo -e "\n=== USUARIOS ==="
 who
