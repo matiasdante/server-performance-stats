@@ -1,6 +1,21 @@
 #!/bin/bash
 
-echo "=== USO TOTAL DE CPU ==="
+echo "=== SISTEMA OPERATIVO ==="
+cat /etc/os-release | grep -e "^NAME" -e "^VERSION"
+
+echo -e "\n=== UPTIME ==="
+uptime -p
+
+echo -e "\n=== PROMEDIO DE CARGA ==="
+uptime | awk -F'load avarage:' '{ print $2 }'
+
+echo -e "\n=== USUARIOS ==="
+who
+
+echo -e "\n=== LOGIN FAILED ==="
+lastb | head -n 10
+
+echo -e "\n=== USO TOTAL DE CPU ==="
 cpu_info=$(top -bn1 | grep "Cpu(s)")
 cpu_usado=$(echo "$cpu_info" | awk '{print $2}')
 cpu_sistema=$(echo "$cpu_info" | awk '{print $4}')
