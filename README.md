@@ -51,4 +51,5 @@ $ ./server-stats.sh
 
 ## Credits
 
+* Made for the roadmap.sh projecto - server-performance-stats - https://roadmap.sh/projects/server-stats
 * [matutEv](https://github.com/matiasdante)
